@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<html>
+  <head>
+    <title> Global Energy Dashboard  </title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="scripts/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      
+      <div class="title-card">
+        <h1> Global Energy Dashboard</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-4 col-sm-4 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col mt-0">
+                  <h4 class="indicator-title">Energy Consumption <span id="Consumption Year">  </span></h4>
+                  <span class= "text-sm font-weight-bolder" id="Energy Consumption Percent">0%</span>
+                  <span class=" text-muted text-sm font-weight-bolder"> since last year</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon">
+                    <img class="icon-display" src="image/consumption.svg"/>
+                  </div>
+                </div>
+              </div>
+              <div class="seperation"></div>
+              <h3 id="Energy Consumption" >0</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-sm-4 col-sm-6 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col mt-0">
+                  <h4  class="indicator-title">Electricity Generation <span id="Generation Year">  </span></h4>
+                  <span class="text-sm font-weight-bolder" id="Electricity Generation Percent">0%</span>
+                  <span class=" text-muted text-sm font-weight-bolder"> since last year</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon">
+                    <img class="icon-display" src="image/generation.svg" />
+                  </div>
+                </div>
+              </div>
+              <div class="seperation"></div>
+              <h3 id="Electricity Generation">0</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4 col-sm-4 col-sm-12 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="row"> 
+                <div class="col mt-0">
+                  <h4 class="indicator-title">Installed Capacity <span id="Capacity Year">  </span></h4>
+                  <span class= "text-sm font-weight-bolder" id="Installed Generating Capacity Percent">0%</span>
+                  <span class=" text-muted text-sm font-weight-bolder"> since last year</span>
+                </div>
+              <div class="col-auto">
+                <div class="icon">
+                  <img class="icon-display" src="image/capacity.svg"/>
+                </div>
+              </div>
+              </div>
+              <div class="seperation"></div>
+              <h3 id="Installed Generating Capacity">0 </h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class = "col-xl-6 col-sm-6 col-sm-12 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body">
+                <h4 class = "indicator-title"> Global Energy Consumption <span class= "unit">(Qbtu)</span></h4>
+              <div class="seperation"></div>
+              <div class="display-graph">
+                <div id="energy-consumption"></div>
+              </div>
+            </div>
+          </div>   
+        </div>
+
+        <div class = "col-xl-6 col-sm-6 col-sm-12 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h4 class = "indicator-title">Global Energy Consumption By Fuel & Sector In <span id="Consumption Year Graph"></span> <span class= "unit">(Qbtu)</span></h4>
+              <div class="seperation"></div>
+              <div class="display-graph">
+                <div id="energy-consumption-fuel"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 col-sm-6 col-sm-12 mb-xl-0 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col mt-0">
+                  <h4 class = "indicator-title" >Global Net Electricity Generation By Fuel <span class= "unit">(BkWh)</span></h4>
+                </div>
+                <div class="col-auto float-end">
+                  <select id="selectButton"></select>
+                </div>
+              </div>
+              <div class="seperation"></div>
+              <div class="display-graph">
+                <div id="electricity-generation-fuel"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-sm-6 col-sm-12 mb-xl-0 mb-4">
+          <div class = "card">
+            <div class="card-body">
+              <h4 class = "indicator-title">Global Installed Genertating Capacity By Fuel In <span id="Capacity Year Graph"></span>  <span class= "unit">(Gw)</span></h4>
+              <div class="seperation"></div>
+              <div class="display-graph">
+                <div id="installed-capacity-fuel"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <a href="https://www.eia.gov"><p>Source: EIA</p></a>
+      </footer>
+
+    </div>
+  </body>
+</html>
+
+
+
